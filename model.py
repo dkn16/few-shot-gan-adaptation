@@ -778,10 +778,10 @@ class Patch_Discriminator(nn.Module):
                 inp = self.convs[i](inp)
             else:
                 temp1 = self.convs[i].conv1(inp)
-                if (flag > 0) and (temp1.shape[1] == 512) and (temp1.shape[2] == 32 or temp1.shape[2] == 16):
+                if (flag > 0) and (temp1.shape[1] == 512) and (temp1.shape[2] == 16 or temp1.shape[2] == 8):
                     feat.append(temp1)
                 temp2 = self.convs[i].conv2(temp1)
-                if (flag > 0) and (temp2.shape[1] == 512) and (temp2.shape[2] == 32 or temp2.shape[2] == 16):
+                if (flag > 0) and (temp2.shape[1] == 512) and (temp2.shape[2] == 16 or temp2.shape[2] == 8):
                     feat.append(temp2)
                 inp = self.convs[i](inp)
                 if (flag > 0) and len(feat) == 4:

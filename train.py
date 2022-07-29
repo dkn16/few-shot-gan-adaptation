@@ -564,11 +564,11 @@ def train(args, loader, generator, discriminator, extra, g_optim, d_optim, e_opt
                         "g_ema": g_ema.state_dict(),
                         # uncomment the following lines only if you wish to resume training after saving. Otherwise, saving just the generator is sufficient for evaluations
 
-                        #"g": g_module.state_dict(),
+                        "g": g_module.state_dict(),
                         #"g_s": g_source.state_dict(),
-                        #"d": d_module.state_dict(),
-                        #"g_optim": g_optim.state_dict(),
-                        #"d_optim": d_optim.state_dict(),
+                        "d": d_module.state_dict(),
+                        "g_optim": g_optim.state_dict(),
+                        "d_optim": d_optim.state_dict(),
                     },
                     f"%s/{str(i).zfill(6)}.pt" % (model_path),
                 )
